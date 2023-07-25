@@ -1,4 +1,4 @@
---Calculating how often members and casual riders use different types of bikes
+--Calculating which type of bike casual ridrs and members prefer the most
 
 SELECT
     rider_type AS RiderType,
@@ -17,3 +17,8 @@ WHERE
     rideable_type IN ('electric_bike', 'classic_bike', 'docked_bike')
 GROUP BY
     rider_type, rideable_type
+
+
+Note: CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (PARTITION BY rider_type) AS DECIMAL(5, 2)) AS Percentage_of_usage; 
+This query calculates the percentage of each group's count (defined by rider type) relative to the total count of that rider type.
+The percentage is rounded to two decimal places.
