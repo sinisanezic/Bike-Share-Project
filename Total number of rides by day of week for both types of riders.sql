@@ -1,0 +1,16 @@
+--Calculating total number of rides by day of week for both types of riders 
+
+SELECT rider_type,
+    CASE DATEPART(WEEKDAY, started_at_new)
+        WHEN 1 THEN 'Sunday'
+        WHEN 2 THEN 'Monday'
+        WHEN 3 THEN 'Tuesday'
+        WHEN 4 THEN 'Wednesday'
+        WHEN 5 THEN 'Thursday'
+        WHEN 6 THEN 'Friday'
+        WHEN 7 THEN 'Saturday'
+    END AS day_of_week,
+    COUNT(*) AS total_rides
+FROM Bike_Share_Project.dbo.full_year
+GROUP BY DATEPART(WEEKDAY, started_at_new), rider_type
+ORDER BY DATEPART(WEEKDAY, started_at_new)
