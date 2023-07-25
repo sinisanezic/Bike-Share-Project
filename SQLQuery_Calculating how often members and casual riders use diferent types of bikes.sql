@@ -1,4 +1,4 @@
---Calculating which type of bike casual ridrs and members prefer the most
+--Calculating which type of bike casual riders and members prefer the most.
 
 SELECT
     rider_type AS RiderType,
