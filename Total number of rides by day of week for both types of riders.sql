@@ -1,4 +1,4 @@
---Calculating total number of rides by day of week for both types of riders 
+--Calculating total number of rides by day of week for both types of riders. 
 
 SELECT rider_type,
     CASE DATEPART(WEEKDAY, started_at_new)
