@@ -1,3 +1,5 @@
+-- Creating table full_year
+
 CREATE TABLE full_year (
 ride_id nvarchar(50),
 rideable_type nvarchar(50),
